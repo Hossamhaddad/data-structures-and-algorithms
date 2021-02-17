@@ -82,10 +82,10 @@ const isCapitalized = (str) => {
   let regex=/\b[A-Z](\w)*/g;
   let test=str.match(regex);
   let wordArr=[];
-  if(test!=null){
-    wordArr.push(test)
+  if(test!==null){
+  wordArr=test;
   }
-  return wordArr;
+return wordArr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,12 +96,13 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   let newArr=[];
-  let regex=/^[A-J]/g;
+  
   arr.forEach(item=>{
+    let regex=/^[A-J]/g;
    if(regex.test(item)){
-     newArr.push(item)
+     newArr.push(item);
    }
-  })
+  });
   return newArr;
 };
 
@@ -140,7 +141,14 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  let regex=/ \s\b/g;
+  let test=str.match(regex);
+  let wordArr=[];
+  if(test!=null){
+    wordArr.push(test)
+  }
+  return wordArr;
+ 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -276,7 +284,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia vel massa sed egestas. Nunc faucibus iaculis elit, a scelerisque enim condimentum sed. Aenean ac scelerisque sem, et pharetra diam.';
 
   test('It should only return words that are immediately followed by a space', () => {
