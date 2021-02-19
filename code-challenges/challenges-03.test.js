@@ -103,14 +103,9 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   arr.sort((a,b)=>{
-    if (a.price > b.price) {
-      return 1;
-    } else if (b.price > a.price) {
-      return -1;
-    } else {
-      return 0;
-    }
-  })
+    return a.price-b.price;
+  });
+  return arr;
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
