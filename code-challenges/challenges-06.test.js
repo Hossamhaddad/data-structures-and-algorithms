@@ -54,20 +54,21 @@ let characters = [
   }
 ];
 
-// const sortByChildren = (charArray) => {
-//   charArray.forEach(element => {
-//     element.sort((a,b)=>{
-//       if (a.children.length > b.children.length){
-//         return 1;
-//       } else if (a.children.length < b.children.length){
-//         return -1;
-//       } else if (a.children.length===b.children.length){
-//          return a.name.localeCompare(b.name);
-//       }
-//     });
-//   });
-//   return charArray;
-// };
+const sortByChildren = (charArray) => {
+  charArray.forEach(element => {
+    element.sort((a,b)=>{
+      if (a.children.length > b.children.length){
+        return a.children.length-b.children.length;
+      } else if (a.children.length < b.children.length){
+        return b.children.length-a.children.length;
+      } else if (a.children.length===b.children.length){
+         return a.name-b.name;
+      }
+    });
+    return charArray;
+  });
+
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -102,12 +103,20 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   
-  for(let i=0;i<obj.length;i++)
-  if(obj[i].keys===value){
-    return true;
-  } else{
-    return false;
-  }
+  obj.forEach(element => {
+    if(element.entries.includes(value)){
+      return true;
+    }else{
+      return false;
+    }
+  });
+//   for(let i=0;i<obj.length;i++){
+//   if(Object.values(obj)===value ){
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -131,9 +140,11 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   let newArr=[];
-  Object.entries(obj).forEach(entry => {
-    newArr.push(entry);
+  const objectArray = Object.entries(obj);
+  objectArray.forEach((key,value) => {
+    return newArr.push(key,value);
   });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
