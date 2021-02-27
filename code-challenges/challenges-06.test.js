@@ -54,20 +54,21 @@ let characters = [
   }
 ];
 
-// const sortByChildren = (charArray) => {
-//   charArray.forEach(element => {
-//     element.sort((a,b)=>{
-//       if (a.children.length > b.children.length){
-//         return 1;
-//       } else if (a.children.length < b.children.length){
-//         return -1;
-//       } else if (a.children.length===b.children.length){
-//          return a.name.localeCompare(b.name);
-//       }
-//     });
-//   });
-//   return charArray;
-// };
+const sortByChildren = (charArray) => {
+  charArray.forEach(element => {
+    Object.values(element).sort((a,b)=>{
+      if (a.children.length > b.children.length){
+        return 1;
+      } else if (a.children.length < b.children.length){
+        return -1;
+      } else if (a.children.length===b.children.length){
+         return a.name.localeCompare(b.name);
+      }
+    });
+    return charArray;
+  });
+};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -101,13 +102,16 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  
-  for(let i=0;i<obj.length;i++)
-  if(obj[i].keys===value){
-    return true;
-  } else{
-    return false;
-  }
+   let values=Object.values(obj);
+   let check=values.forEach(item=>{
+     if(item.includes(value)){
+       return true;
+     }else{
+       return false;
+     }
+   })
+   return check;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,8 +136,10 @@ HR has asked you to change the data to make it easier to print so that it looks 
 const updateNumbers = (obj) => {
   let newArr=[];
   Object.entries(obj).forEach(entry => {
-    newArr.push(entry);
+    
+    newArr.push(entry.join(': '));
   });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -143,12 +149,13 @@ Write a function named getHouses that returns a new array containing the names o
 ------------------------------------------------------------------------------------------------ */
 
 const getHouses = (arr) => {
-  let houses = [];
-for(let i=0;i<arr.length;i++){
 
-houses.push(arr[i].house)
-}
-return houses
+  let values=Object.values(arr)
+  let houses=[];
+  let newArr=values.forEach(item=>{
+    houses.push(item.house);
+  })
+  return houses;
 }
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -162,12 +169,19 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-// const hasChildrenValues = (arr, character) => {
-//   arr.forEach(item=>{
-//     if(item.c)
-//   })
+const hasChildrenValues = (arr, character) => {
 
-// };
+  let values=Object.values(arr);
+  values.forEach(item=>{
+    if(item.children!==0){
+      return true;
+    }else{
+      return false;
+    }
+   
+ 
+  });
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -279,7 +293,7 @@ describe('Testing challenge 4', () => {
 
 describe('Testing challenge 5', () => {
   test('It should return an array of the names of the houses', () => {
-    expect(getHouses(characters)[0]).toStrictEqual('Greyjoy');
+    expect(getHouses(characters)[5]).toStrictEqual('Greyjoy');
     expect(getHouses(characters).length).toStrictEqual(7);
   });
 });
