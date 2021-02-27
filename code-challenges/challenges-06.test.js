@@ -55,20 +55,19 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  charArray.forEach(element => {
-    element.sort((a,b)=>{
-      if (a.children.length > b.children.length){
-        return a.children.length-b.children.length;
-      } else if (a.children.length < b.children.length){
-        return b.children.length-a.children.length;
-      } else if (a.children.length===b.children.length){
-         return a.name-b.name;
-      }
-    });
-    return charArray;
-  });
 
+  let newArr=charArray.sort((a,b)=>{
+    if (a.children.length > b.children.length){
+      return 1;
+    } else if (a.children.length < b.children.length){
+      return -1;
+    } else if (a.children.length===b.children.length){
+       return a.name.localeCompare(b.name);
+    }
+  });
+   return newArr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -89,6 +88,7 @@ properties.forEach( property => {
   newArr.push(property);
 })
 return newArr;
+
   };
 
 
@@ -102,21 +102,18 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  
-  obj.forEach(element => {
-    if(element.entries.includes(value)){
-      return true;
+  let result;
+  let values=Object.values(obj);
+  let check=values.forEach(item=>{
+    if(item===value){
+      result=true;
     }else{
-      return false;
+      result=false;
     }
-  });
-//   for(let i=0;i<obj.length;i++){
-//   if(Object.values(obj)===value ){
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
+  })
+  return result;
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -140,11 +137,13 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   let newArr=[];
-  const objectArray = Object.entries(obj);
-  objectArray.forEach((key,value) => {
-    return newArr.push(key,value);
+
+  Object.entries(obj).forEach(entry => {
+    
+    newArr.push(entry.join(': '));
   });
   return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -154,12 +153,14 @@ Write a function named getHouses that returns a new array containing the names o
 ------------------------------------------------------------------------------------------------ */
 
 const getHouses = (arr) => {
-  let houses = [];
-for(let i=0;i<arr.length;i++){
 
-houses.push(arr[i].house)
-}
-return houses
+  let values=Object.values(arr)
+  let houses=[];
+  let newArr=values.forEach(item=>{
+    houses.push(item.house);
+  })
+  return houses;
+
 }
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -173,12 +174,21 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-// const hasChildrenValues = (arr, character) => {
-//   arr.forEach(item=>{
-//     if(item.c)
-//   })
+const hasChildrenValues = (arr, character) => {
 
-// };
+ 
+ 
+  let newArr=arr.forEach(item=>{
+    if(item.name===character){
+        if(item.children.length>0){
+          return true
+        }else{
+          return false;
+        }
+      }
+  });
+  return newArr
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
