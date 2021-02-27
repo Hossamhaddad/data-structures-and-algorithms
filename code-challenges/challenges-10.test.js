@@ -42,14 +42,17 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  let result=input.filter(item=>{
-      item.filter(element=>{
-     
-       return element==target;
-      })
-      return item;
-    })
-    return result;
+  let targetCount=0;
+  let newArr=input.forEach(item=>{
+   item.filter(element=>{
+     if (element===target){
+       targetCount=targetCount+1
+       return true;
+     }
+   })
+  
+  })
+  return targetCount;
   }
  
 
@@ -64,13 +67,18 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
+  let sum=0;
   let addNum=input.forEach(item=>{
-  item.reduce((acc,val,idx)=>{
-    acc=acc+val;
-    return acc;
-  },0)
-  })
-return addNum;
+  
+   item.forEach(element=>{
+     
+     sum=sum+element
+       
+    return sum
+   })
+   return item
+   })
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,7 +94,22 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  let newArr=[];
+  let result=input.forEach(item=>{
+  newArr.push(item.filter(element=>{
+     if(element/1&&element%5===0){
+     return element
+     }
+  
+    }))
+    
+  })
+  newArr=newArr.map(item=>{
+    return Math.pow(2,item)
+  })
+  
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,12 +176,15 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   let nameArr=[];
-  let newArr=data.filter(item=>{
-     if(item.gender=='male'||item.gender=='female'){
-     return item.name;
+  let newArr=data.forEach(item=>{
+     if(item.gender==='male'||item.gender==='female'){
+     nameArr.push(item)
      }
   })
-return nameArr;
+  return nameArr.map(element=>{
+ return element.name
+  }).join(' and ')
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -168,7 +194,12 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  let short=starWarsData.sort((a,b)=>{
+    return a.height-b.height;
+  }).map(item=>{
+    return item.name
+  })
+  return short[0];
 };
 
 /* ------------------------------------------------------------------------------------------------

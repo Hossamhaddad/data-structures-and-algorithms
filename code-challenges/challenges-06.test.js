@@ -55,8 +55,8 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  charArray.forEach(element => {
-    Object.values(element).sort((a,b)=>{
+  let newArr=charArray.forEach(element => {
+    Object.keys(element).sort((a,b)=>{
       if (a.children.length > b.children.length){
         return 1;
       } else if (a.children.length < b.children.length){
@@ -65,7 +65,7 @@ const sortByChildren = (charArray) => {
          return a.name.localeCompare(b.name);
       }
     });
-    return charArray;
+    return newArr;
   });
 };
 
@@ -171,16 +171,17 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
 
-  let values=Object.values(arr);
-  values.forEach(item=>{
-    if(item.children!==0){
-      return true;
-    }else{
-      return false;
-    }
-   
  
+  let newArr=arr.forEach(item=>{
+    if(item.name===character){
+        if(item.children.length!==0){
+          return true
+        }else{
+          return false;
+        }
+      }
   });
+  return newArr
 };
 
 /* ------------------------------------------------------------------------------------------------
