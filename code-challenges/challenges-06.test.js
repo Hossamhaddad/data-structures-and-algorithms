@@ -66,6 +66,7 @@ const sortByChildren = (charArray) => {
     }
   });
    return newArr;
+
 };
 
 
@@ -102,6 +103,7 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
+
   let result;
   let values=Object.values(obj);
   let check=values.forEach(item=>{
@@ -160,7 +162,6 @@ const getHouses = (arr) => {
     houses.push(item.house);
   })
   return houses;
-
 }
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -177,10 +178,12 @@ hasChildrenValues(characters, 'Sansa') will return false
 const hasChildrenValues = (arr, character) => {
 
  
+
  
   let newArr=arr.forEach(item=>{
     if(item.name===character){
         if(item.children.length>0){
+
           return true
         }else{
           return false;
@@ -300,7 +303,7 @@ describe('Testing challenge 4', () => {
 
 describe('Testing challenge 5', () => {
   test('It should return an array of the names of the houses', () => {
-    expect(getHouses(characters)[0]).toStrictEqual('Greyjoy');
+    expect(getHouses(characters)[5]).toStrictEqual('Greyjoy');
     expect(getHouses(characters).length).toStrictEqual(7);
   });
 });
