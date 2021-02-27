@@ -84,6 +84,9 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
+  people.forEach(item=>{
+    item.isAuthor=true ;
+  })
 
 };
 
@@ -103,10 +106,10 @@ console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
 const append = (arr1, arr2) => {
-  let firstArr=arr1;
-    let secondArr=arr2;
-    firstArr=firstArr.concat(secondArr);
-    
+ arr2.forEach(item=>{
+   arr1.push(item);
+ });
+  
 };
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -153,7 +156,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should add a property to every object in an array', () => {
     const a = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }, { fullName: 'Kurt Vonnegut' }];
     setStatusAsAuthor(a);

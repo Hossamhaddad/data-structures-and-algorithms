@@ -55,6 +55,7 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
+
   let newArr=charArray.sort((a,b)=>{
     if (a.children.length > b.children.length){
       return 1;
@@ -112,6 +113,7 @@ const checkValues = (obj, value) => {
   })
   return result;
 
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,6 +137,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   let newArr=[];
+
   Object.entries(obj).forEach(entry => {
     
     newArr.push(entry.join(': '));
