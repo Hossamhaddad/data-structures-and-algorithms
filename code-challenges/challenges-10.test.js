@@ -1,7 +1,4 @@
 'use strict';
-
-const { name } = require("mustache");
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -108,7 +105,7 @@ const divisibleByFiveTwoToThePower = (input) => {
     return Math.pow(2,item)
   })
   
-  return newArr;
+   return newArr;
 
 };
 

@@ -9,15 +9,18 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  let max=0;
-  let newArr=arr.forEach(item => {
-   if(item>max){
-    let max=item;
-   }else{
-     let max=max;
-   }
-  });
-return max
+  let newArr = arr.reduce((acc, val, index) => {
+
+    if (val > acc) {
+      acc = val;
+      return acc;
+
+    } else {
+      acc = acc;
+      return acc;
+    }
+  })
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,7 +38,17 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let max = 0;
+  let newArr = matrix.forEach(item => {
+
+    item.forEach(number => {
+      number > max ? max = number : max = max
+
+    });
+
+  });
+
+  return max;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,7 +66,13 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  ..
+  let max = 0;
+  let newArr = matrix.forEach(item => {
+    item.forEach(number => {
+      max = max + number;
+    });
+  });
+  return max;
 };
 
 
@@ -80,8 +99,14 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
+  let newArr = [];
+  hoursOpen.forEach(item => {
+    stores.forEach(element => {
+      let value = value + element
+      newArr.push(value)
+    })
 
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,7 +145,17 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let number;
+  let newArr = errands.forEach(shop => {
+    if (shop.store === 'Pet store') {
+      shop.items.forEach(item => {
+        if (item.name === 'Treats') {
+          number = item.quantity;
+        }
+      });
+    }
+  });
+  return number;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -236,13 +271,13 @@ describe('Testing challenge 1', () => {
 
 describe('Testing challenge 2', () => {
   test('It should return the max value', () => {
-    expect(findMax([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(24);
+    expect(findMax([[13, 24, 24, 2], [2, 5, 6], [2, 3]])).toStrictEqual(24);
   });
 });
 
 describe('Testing challenge 3', () => {
   test('It should return the total sum', () => {
-    expect(totalSum([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(81);
+    expect(totalSum([[13, 24, 24, 2], [2, 5, 6], [2, 3]])).toStrictEqual(81);
     expect(totalSum([])).toStrictEqual(0);
   });
 });
