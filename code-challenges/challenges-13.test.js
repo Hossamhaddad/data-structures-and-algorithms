@@ -10,8 +10,6 @@ const longestString = (arr) => {
   let longStr=arr.reduce((acc,val,index)=>{
     if(val.length>acc.length){
       acc=val;
-    }else{
-      acc=acc;
     }
     return acc;
     })
@@ -44,7 +42,14 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  let newArr1=[];
+  let newArr=arr.forEach(item=>{
+   if(item.includes(':)')){
+  
+      newArr1.push(item) ;
+   }
+  })
+  return newArr1;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,7 +73,13 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let newStr=[];
+  for(let i=0;i<str.length;i++){
+      if ((i % 2) !==0){
+          newStr.push(str[i]);
+      }
+  }
+  return newStr.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -78,7 +89,22 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  let newArr=arr.map(item=>{
+    if(item.includes(':)')){
+      return true
+    }else{
+      return false 
+    }
+   })
+   let retArr=newArr.reduce((acc,val,index)=>{
+     acc=false
+     if(val==acc){
+
+       return false
+      }
+   return acc 
+   })
+   return retArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
