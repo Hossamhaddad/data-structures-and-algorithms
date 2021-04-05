@@ -11,3 +11,5 @@
 ### using a counter and a for loop to loop over the array
 
 ## Solution
+
+![ArrayReverse](../assets/array-reverse.jpg)
