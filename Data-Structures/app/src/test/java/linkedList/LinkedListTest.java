@@ -7,9 +7,45 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
-@Test public void testinsert(){
-    LinkedList newList = new LinkedList("hi");
-    newList.insert("hello");
-    assertEquals("The result is hello", "hello", testinsert(newList));
+
+@Test public void testEmptyList(){
+  LinkedList empty=new LinkedList();
+  assertNull(empty.head);
 }
+@Test public void testInsert(){
+  LinkedList insert=new LinkedList("hi");
+  insert.insert("hello");
+  assertEquals("The value should be hello ","hello",insert.head.next.value);
+}
+@Test public void testHead() {
+  LinkedList head=new LinkedList("hi");
+  head.insert("hello");
+  assertEquals("The head should be hi","hello",head.head.next.value);
+}
+@Test public void testMulInsert(){
+  LinkedList multInsert=new LinkedList("hello");
+  multInsert.insert("hi");
+  multInsert.insert("nice");
+  assertEquals("The result should be nice","nice",multInsert.head.next.next.value);
+}
+@Test public void testInculdes(){
+  LinkedList listIncludes=new LinkedList("1");
+  listIncludes.insert("2");
+  listIncludes.insert("3");
+  assertEquals("the result should be True ",true,listIncludes.includes("2"));
+}
+  @Test public void testNotInculdes(){
+    LinkedList listNotIncludes=new LinkedList("1");
+    listNotIncludes.insert("2");
+    listNotIncludes.insert("3");
+    assertEquals("the result should be false ",false,listNotIncludes.includes("24"));
+  }
+  @Test public void testReturn(){
+    LinkedList returnList=new LinkedList("1");
+    returnList.insert("2");
+    returnList.insert("3");
+    assertEquals("the result should be {1}->{2}->{3}->NULL","{1}->{2}->{3}->NULL",returnList.tostring());
+  }
+
+
 }
