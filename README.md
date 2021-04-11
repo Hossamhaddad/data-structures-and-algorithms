@@ -5,4 +5,5 @@
 | Challenges Table of content                  |
 | :------------------------------------------- |
 | [Array Reverse](/challenges/ArrayReverse.md) |
-| [Array Shift](/challenges/ArrayReverse.md)   |
+| [Array Shift](/challenges/arrayshift.md)     |
+| [Linked List](/Data-Structures/Readme.md)    |

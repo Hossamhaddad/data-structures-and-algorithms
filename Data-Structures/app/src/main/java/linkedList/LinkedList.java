@@ -22,12 +22,12 @@ LinkedList(){
     newList.insert("husam");
     newList.insert("high");
     newList.insert("low");
+    newList.insertAfter("low","cool");
     System.out.println(newList.tostring());
   }
 
   public void insert(String value) {
     Node newHead = new Node(value);
-
     Node current = head;
     while (current.next != null) {
 
@@ -65,5 +65,52 @@ public String tostring(){
     allValues+="NULL";
  return allValues;
 }
+
+  public void append(String value) {
+    Node newHead = new Node(value);
+    Node current = head;
+    while (current.next != null) {
+      current = current.next;
+    }
+    current.next=newHead;
+  }
+  public void insertBefore(String value,String newValue) {
+    Node newVal = new Node(newValue);
+    Node current = head;
+    Node before = null;
+    try {
+      while (current.next != null) {
+        if (current.value == value) {
+          before.next = newVal;
+          newVal.next = current;
+          return;
+        } else {
+          before = current;
+          current = current.next;
+        }
+      }throw (new Exception());
+    } catch (Exception ex ) {
+      System.out.println("The value you try to insert before doesn't exist");
+    }
+  }
+  public void insertAfter(String value,String newValue){
+    Node newVal= new Node(newValue);
+    Node current = head;
+    Node after=current.next;
+    try {
+      while (current.next != null) {
+        if (current.value == value) {
+          current.next = newVal;
+          newVal.next = after;
+          return;
+        } else {
+          after = after.next;
+          current = current.next;
+        }
+      }throw(new Exception());
+    }catch (Exception ex){
+      System.out.println("the value you want to insert after doesn't exist ");
+    }
+  }
 }
 
