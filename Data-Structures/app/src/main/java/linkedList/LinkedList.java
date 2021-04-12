@@ -6,7 +6,6 @@ package linkedList;
 import java.util.Arrays;
 
 public class LinkedList {
-
   Node head=null;
 LinkedList(){
 
@@ -22,7 +21,6 @@ LinkedList(){
     newList.insert("husam");
     newList.insert("high");
     newList.insert("low");
-    newList.insertAfter("low","cool");
     System.out.println(newList.tostring());
   }
 
@@ -111,6 +109,25 @@ public String tostring(){
     }catch (Exception ex){
       System.out.println("the value you want to insert after doesn't exist ");
     }
+  }
+
+  public void nodesValue(int k){
+  int listLength=0;
+    Node current = head;
+    while(current != null){
+      current = current.next;
+      listLength++;
+    }
+    if(k<=listLength){
+      current = head;
+      for (int i = 1; i < listLength - k ;i++){
+        current = current.next;
+      }
+      System.out.println(current.value);
+    }else {
+      System.out.println("Exception");
+    }
+
   }
 }
 
