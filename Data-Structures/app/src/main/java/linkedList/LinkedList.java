@@ -3,11 +3,12 @@
  */
 package linkedList;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.Arrays;
 
 public class LinkedList {
   Node head=null;
-LinkedList(){
+   LinkedList(){
 
 }
   public LinkedList(String item) {
@@ -16,11 +17,8 @@ LinkedList(){
 
 
   public static void main(String[] args) {
-    LinkedList newList = new LinkedList("head");
-    newList.insert("hello");
-    newList.insert("husam");
-    newList.insert("high");
-    newList.insert("low");
+    LinkedList newList = new LinkedList("husam");
+    newList.nodesValue(2);
     System.out.println(newList.tostring());
   }
 
@@ -118,15 +116,26 @@ public String tostring(){
       current = current.next;
       listLength++;
     }
-    if(k<=listLength){
-      current = head;
-      for (int i = 1; i < listLength - k ;i++){
-        current = current.next;
+
+      if(k<0){
+        System.out.println("null");
       }
-      System.out.println(current.value);
-    }else {
-      System.out.println("Exception");
+
+    try {
+      if(k<listLength){
+        current = head;
+        for (int i = 1; i < listLength - k ;i++){
+          current = current.next;
+        }
+        System.out.println(current.value);
+      }else {
+        throw new Exception();
+      }
+    }catch (Exception ex){
+
+      System.out.println("this value exceeded the linkedlist length ");
     }
+
 
   }
 }

@@ -4,6 +4,9 @@
 package linkedList;
 
 import org.junit.Test;
+
+import java.net.PortUnreachableException;
+
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
@@ -88,15 +91,20 @@ public class LinkedListTest {
     returnList.insertAfter("3","9");
     assertEquals("the result should be {head}->{2}->{3}->{9}->{5}->{8}->NULL","{head}->{2}->{3}->{9}->{5}->{8}->NULL",returnList.tostring());
   }
-//  @Test public void testInsertAftLast(){
-//    LinkedList returnList=new LinkedList("head");
-//    returnList.insert("2");
-//    returnList.insert("3");
-//    returnList.append("5");
-//    returnList.append("8");
-//    returnList.insertAfter("8","9");
-//    assertEquals("the result should be {head}->{2}->{3}->{5}->{8}->{9}->NULL","{head}->{2}->{3}->{5}->{8}->{9}->NULL",returnList.tostring());
-//  }
+  @Test public void testInsertAftLast(){
+    LinkedList returnList=new LinkedList("head");
+    returnList.insert("2");
+    returnList.insert("3");
+    returnList.append("5");
+    returnList.append("8");
+    returnList.insertAfter("8","9");
+    assertEquals("the result should be {head}->{2}->{3}->{5}->{8}->{9}->NULL","{head}->{2}->{3}->{5}->{8}->{9}->NULL",returnList.tostring());
+  }
+@Test public void testKGreaterthan(){
+  LinkedList returnList=new LinkedList("head");
+  returnList.insert("2");
+
+}
 
 
 }
