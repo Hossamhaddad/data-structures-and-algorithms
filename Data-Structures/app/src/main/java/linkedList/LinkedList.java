@@ -3,7 +3,6 @@
  */
 package linkedList;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.Arrays;
 
 public class LinkedList {
@@ -18,8 +17,12 @@ public class LinkedList {
 
   public static void main(String[] args) {
     LinkedList newList = new LinkedList("husam");
-    newList.nodesValue(2);
-    System.out.println(newList.tostring());
+    newList.insert("2");
+    LinkedList second=new LinkedList("hello");
+    second.insert("3");
+    second.insert("4");
+    zipList(newList,second);
+    System.out.println();
   }
 
   public void insert(String value) {
@@ -135,8 +138,27 @@ public String tostring(){
 
       System.out.println("this value exceeded the linkedlist length ");
     }
+  }
+  public static LinkedList zipList(LinkedList a,LinkedList b){
+     Node first=a.head;
+     Node second=b.head;
+     while (first.next!=null&&second.next!=null) {
+       Node current = second.next;
 
+       second.next = first.next;
+       first.next = second;
+       first = second.next;
+       second = current;
+     }
+     if(first.next!=null){
+       first.next=first;
+     }else {
+       first.next=second;
+     }
+    System.out.println(a.tostring());
+return  a;
+     }
 
   }
-}
+
 
