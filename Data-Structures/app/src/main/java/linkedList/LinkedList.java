@@ -3,6 +3,7 @@
  */
 package linkedList;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LinkedList {
@@ -21,8 +22,9 @@ public class LinkedList {
     LinkedList second=new LinkedList("hello");
     second.insert("3");
     second.insert("4");
-    zipList(newList,second);
-    System.out.println();
+    System.out.println(second.tostring());
+
+
   }
 
   public void insert(String value) {
@@ -157,8 +159,31 @@ public String tostring(){
      }
     System.out.println(a.tostring());
 return  a;
-     }
 
   }
+ public ArrayList saveLinkedList(){
+   ArrayList linkedList=new ArrayList();
+   Node current= head;
+ while (current!=null){
+   linkedList.add(current.value);
+   current=current.next;
+ }
+ return linkedList;
+ }
+ public Node reverseLinkedList(Node node){
+Node current=head;
+Node previous=null;
+Node next=null;
+while(current!=null){
+  next=current.next;
+  current.next=previous;
+  current=next;
+}
+node=previous;
+return previous;
+}
+
+ }
+
 
 
