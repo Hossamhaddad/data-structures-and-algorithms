@@ -1,8 +1,12 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
 public class BinarySearch{
   public static void main(String[] args)
   {
    int [] sort={2,3,4,5,6,7};
-   binarySearch(sort,4);
+
+
+    System.out.println(binarySearch(sort,11));
   }
   public static int binarySearch(int[] data, int n) {
     int smallNum=0;
@@ -18,8 +22,18 @@ public class BinarySearch{
         return middleNum;
       }
     }
-    System.out.println("middleNum");
-    System.out.println(middleNum);
-    return middleNum;
+    return -1;
+  }
+
+  @Test public void testExistedKey(){
+    int [] sort={2,3,4,5,6,7};
+    assertEquals("the result should be 2 ",2,binarySearch(sort,4));
+  }
+  @Test public void notExistedKey(){
+    int [] sort={2,3,4,5,6,7};
+    assertEquals("the result should be 2 ",-1,binarySearch(sort,10));
   }
 }
+
+
+

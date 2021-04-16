@@ -5,5 +5,6 @@
 | Challenges Table of content                  |
 | :------------------------------------------- |
 | [Array Reverse](/challenges/ArrayReverse.md) |
-| [Array Shift](/challenges/arrayshift.md)   |
-| [Linked List](/Data-Structures/Readme.md)   |
+| [Array Shift](/challenges/arrayshift.md)     |
+| [Linked List](/Data-Structures/Readme.md)    |
+| [Binary Search](/challenges/BinarySearch.md) |
