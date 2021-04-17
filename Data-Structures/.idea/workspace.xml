@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b15d9d26-dde8-4825-a0bf-d1c6090a279c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../stackandqueues/app/src/main/java/stackandqueues/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../stackandqueues/app/src/main/java/stackandqueues/Queue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../stackandqueues/app/src/main/java/stackandqueues/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/linkedList/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/linkedList/LinkedList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +55,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../quotes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../stackandqueues" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />

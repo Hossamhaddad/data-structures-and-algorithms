@@ -8,3 +8,4 @@
 | [Array Shift](/challenges/arrayshift.md)     |
 | [Linked List](/Data-Structures/Readme.md)    |
 | [Binary Search](/challenges/BinarySearch.md) |
+| [Stack and Queue](/stackandqueues/StacksandQueues.md) |
