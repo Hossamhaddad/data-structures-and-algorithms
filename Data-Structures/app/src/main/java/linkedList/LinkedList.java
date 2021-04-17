@@ -22,7 +22,7 @@ public class LinkedList {
     LinkedList second=new LinkedList("hello");
     second.insert("3");
     second.insert("4");
-    System.out.println(second.tostring());
+    zipList(newList,second);
 
 
   }
