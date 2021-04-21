@@ -4,12 +4,14 @@
 package stackandqueues;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-
+ PseudoQueue test=new PseudoQueue();
+      test.enqueue(20);
+      test.enqueue(15);
+      test.enqueue(10);
+      test.enqueue(5);
 
     }
+
 }

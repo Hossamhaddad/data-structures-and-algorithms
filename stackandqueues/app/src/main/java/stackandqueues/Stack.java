@@ -8,14 +8,16 @@ public void push(T value){
 Node item=new Node(value,top);
   top=item;
 }
-  public void pop(){
+  public T pop(){
   try {
     System.out.println("Top removed value  is : "+top.value);
     top=top.next;
+    return top.value;
 
   }catch (Exception ex){
     System.out.println("The stack is empty");
   }
+  return top.value;
   }
 
   public String peek() {

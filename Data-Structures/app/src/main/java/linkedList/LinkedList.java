@@ -28,15 +28,10 @@ public class LinkedList {
   }
 
   public void insert(String value) {
+
     Node newHead = new Node(value);
-    Node current = head;
-    while (current.next != null) {
-
-        current = current.next;
-
-    }
-    current.next=newHead;
-
+    newHead.next = head;
+    head = newHead;
   }
   public boolean includes(String search) {
  Node current = head;
@@ -113,7 +108,6 @@ public String tostring(){
       System.out.println("the value you want to insert after doesn't exist ");
     }
   }
-
   public void nodesValue(int k){
   int listLength=0;
     Node current = head;
@@ -161,27 +155,6 @@ public String tostring(){
 return  a;
 
   }
- public ArrayList saveLinkedList(){
-   ArrayList linkedList=new ArrayList();
-   Node current= head;
- while (current!=null){
-   linkedList.add(current.value);
-   current=current.next;
- }
- return linkedList;
- }
- public Node reverseLinkedList(Node node){
-Node current=head;
-Node previous=null;
-Node next=null;
-while(current!=null){
-  next=current.next;
-  current.next=previous;
-  current=next;
-}
-node=previous;
-return previous;
-}
 
  }
 
