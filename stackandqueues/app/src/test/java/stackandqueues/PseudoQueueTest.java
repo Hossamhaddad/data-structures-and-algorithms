@@ -11,6 +11,6 @@ public class PseudoQueueTest {
   test.enqueue(15);
   test.enqueue(10);
   test.enqueue(5);
-  
+
 }
 }
