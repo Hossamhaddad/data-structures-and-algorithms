@@ -8,7 +8,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/linkedList/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/linkedList/LinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/linkedList/LinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/linkedList/LinkedListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stackandqueues/app/src/test/java/stackandqueues/PseudoQueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../stackandqueues/app/src/test/java/stackandqueues/PseudoQueueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../challenges/utilities/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../challenges/utilities/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stackandqueues/app/src/main/java/stackandqueues/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../stackandqueues/app/src/main/java/stackandqueues/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stackandqueues/app/src/main/java/stackandqueues/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../stackandqueues/app/src/main/java/stackandqueues/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stackandqueues/app/src/main/java/stackandqueues/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/../stackandqueues/app/src/main/java/stackandqueues/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stackandqueues/app/src/test/java/stackandqueues/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../stackandqueues/app/src/test/java/stackandqueues/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,82 +58,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../quotes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="Gradle.LinkedListTest.testInsertAftLast">
-    <configuration name="LinkedListTest.testAppend" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;linkedList.LinkedListTest.testAppend&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="LinkedListTest.testAppendMult" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;linkedList.LinkedListTest.testAppendMult&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.LinkedListTest.testKequalLinkedList">
     <configuration name="LinkedListTest.testInsertAftLast" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;linkedList.LinkedListTest.testInsertAftLast&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="LinkedListTest.testInsertBefMid" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;linkedList.LinkedListTest.testInsertBefMid&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -166,13 +107,76 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="LinkedListTest.testKequalLinkedList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;linkedList.LinkedListTest.testKequalLinkedList&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="LinkedListTest.testNegativrVal" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;linkedList.LinkedListTest.testNegativrVal&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="LinkedListTest.testNodeValue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;linkedList.LinkedListTest.testNodeValue&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LinkedListTest.testInsertAftLast" />
+        <item itemvalue="Gradle.LinkedListTest.testKequalLinkedList" />
+        <item itemvalue="Gradle.LinkedListTest.testNegativrVal" />
         <item itemvalue="Gradle.LinkedListTest.testKGreaterthan" />
-        <item itemvalue="Gradle.LinkedListTest.testInsertBefMid" />
-        <item itemvalue="Gradle.LinkedListTest.testAppendMult" />
-        <item itemvalue="Gradle.LinkedListTest.testAppend" />
+        <item itemvalue="Gradle.LinkedListTest.testNodeValue" />
+        <item itemvalue="Gradle.LinkedListTest.testInsertAftLast" />
       </list>
     </recent_temporary>
   </component>
@@ -198,19 +202,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/app/src/test/java/linkedList/LinkedListTest.java</url>
-          <line>125</line>
-          <properties class="linkedList.LinkedListTest" method="testInsertAftLast">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

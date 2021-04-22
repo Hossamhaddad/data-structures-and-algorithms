@@ -7,10 +7,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LinkedList {
-  Node head=null;
-   LinkedList(){
+  Node head = null;
 
-}
+  LinkedList() {
+
+  }
+
   public LinkedList(String item) {
     head = new Node(item);
   }
@@ -18,12 +20,14 @@ public class LinkedList {
 
   public static void main(String[] args) {
     LinkedList newList = new LinkedList("husam");
-    newList.insert("2");
-    LinkedList second=new LinkedList("hello");
+    newList.append("2");
+    newList.append("3");
+    newList.append("5");
+    newList.nodesValue(0);
+    LinkedList second = new LinkedList("hello");
     second.insert("3");
     second.insert("4");
-    zipList(newList,second);
-
+    System.out.println(zipList(newList, second));
 
   }
 
@@ -33,34 +37,36 @@ public class LinkedList {
     newHead.next = head;
     head = newHead;
   }
+
   public boolean includes(String search) {
- Node current = head;
- try {
+    Node current = head;
+    try {
 
 
-    while (current != null) {
-      if (current.value == search) {
-        return true;
-      } else {
-        current=current.next;
+      while (current != null) {
+        if (current.value == search) {
+          return true;
+        } else {
+          current = current.next;
+        }
       }
+    } catch (Exception ex) {
+      System.out.println(ex);
     }
- }catch (Exception ex){
-   System.out.println(ex);
- }
-    return  false;
+    return false;
   }
-public String tostring(){
-    String allValues="";
-  Node current = head;
- while (current!=null){
-   allValues+="{"+current.value+"}"+"->";
-   current=current.next;
 
- }
-    allValues+="NULL";
- return allValues;
-}
+  public String tostring() {
+    String allValues = "";
+    Node current = head;
+    while (current != null) {
+      allValues += "{" + current.value + "}" + "->";
+      current = current.next;
+
+    }
+    allValues += "NULL";
+    return allValues;
+  }
 
   public void append(String value) {
     Node newHead = new Node(value);
@@ -68,9 +74,10 @@ public String tostring(){
     while (current.next != null) {
       current = current.next;
     }
-    current.next=newHead;
+    current.next = newHead;
   }
-  public void insertBefore(String value,String newValue) {
+
+  public void insertBefore(String value, String newValue) {
     Node newVal = new Node(newValue);
     Node current = head;
     Node before = null;
@@ -84,17 +91,19 @@ public String tostring(){
           before = current;
           current = current.next;
         }
-      }throw (new Exception());
-    } catch (Exception ex ) {
+      }
+      throw (new Exception());
+    } catch (Exception ex) {
       System.out.println("The value you try to insert before doesn't exist");
     }
   }
-  public void insertAfter(String value,String newValue){
-    Node newVal= new Node(newValue);
+
+  public void insertAfter(String value, String newValue) {
+    Node newVal = new Node(newValue);
     Node current = head;
-    Node after=current.next;
+    Node after = current.next;
     try {
-      while (current.next != null) {
+      while (current != null) {
         if (current.value == value) {
           current.next = newVal;
           newVal.next = after;
@@ -103,60 +112,75 @@ public String tostring(){
           after = after.next;
           current = current.next;
         }
-      }throw(new Exception());
-    }catch (Exception ex){
+      }
+      throw (new Exception());
+    } catch (Exception ex) {
       System.out.println("the value you want to insert after doesn't exist ");
     }
   }
-  public void nodesValue(int k){
-  int listLength=0;
+
+  public String nodesValue(int k) {
+    int listLength = 0;
     Node current = head;
-    while(current != null){
+    while (current != null) {
       current = current.next;
       listLength++;
     }
 
-      if(k<0){
-        System.out.println("null");
-      }
+    if (k < 0) {
+      System.out.println("null");
+      return null;
+    }
 
     try {
-      if(k<listLength){
+      if (k < listLength) {
         current = head;
-        for (int i = 1; i < listLength - k ;i++){
+        for (int i = 1; i < listLength - k; i++) {
           current = current.next;
         }
         System.out.println(current.value);
-      }else {
+        return current.value;
+      } else {
         throw new Exception();
       }
-    }catch (Exception ex){
+    } catch (Exception ex) {
 
       System.out.println("this value exceeded the linkedlist length ");
     }
-  }
-  public static LinkedList zipList(LinkedList a,LinkedList b){
-     Node first=a.head;
-     Node second=b.head;
-     while (first.next!=null&&second.next!=null) {
-       Node current = second.next;
-
-       second.next = first.next;
-       first.next = second;
-       first = second.next;
-       second = current;
-     }
-     if(first.next!=null){
-       first.next=first;
-     }else {
-       first.next=second;
-     }
-    System.out.println(a.tostring());
-return  a;
-
+    return null;
   }
 
- }
+  public static LinkedList zipList(LinkedList a, LinkedList b) {
+    Node first = a.head;
+    Node second = b.head;
+    while (first.next != null && second.next != null) {
+      Node current = second.next;
+
+      second.next = first.next;
+      first.next = second;
+      first = second.next;
+      second = current;
+    }
+    if (first.next != null) {
+      while (first.next != null) {
+        first.next = first;
+        first = first.next;
+      }
+    }
+    if (second.next != null) {
+      while (second.next != null) {
+        first.next = second;
+        second = second.next;
+      }
+      System.out.println(a.tostring());
+      return a;
+
+    }
+    return a;
+  }
+}
+
+
 
 
 

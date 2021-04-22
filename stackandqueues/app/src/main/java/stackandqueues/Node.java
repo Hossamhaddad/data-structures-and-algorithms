@@ -8,6 +8,9 @@ public class Node<T> {
     this.value = value;
     this.next = next;
   }
+  public Object getValue(){
+    return value;
+  }
 }
 
 

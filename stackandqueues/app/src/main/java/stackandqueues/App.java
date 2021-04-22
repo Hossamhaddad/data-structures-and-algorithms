@@ -6,12 +6,12 @@ package stackandqueues;
 public class App {
 
     public static void main(String[] args) {
- PseudoQueue test=new PseudoQueue();
-      test.enqueue(20);
-      test.enqueue(15);
-      test.enqueue(10);
-      test.enqueue(5);
-
+ Stack test=new Stack();
+ test.push(5);
+ test.push(10);
+ test.push(15);
+ test.maxValue();
+ System.out.println(test.maxValue());
     }
 
 }
