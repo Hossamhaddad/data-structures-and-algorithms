@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import java.net.PortUnreachableException;
 
+import static linkedList.LinkedList.zipList;
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
@@ -103,8 +104,8 @@ public class LinkedListTest {
   @Test
   public void testInsertBef1st() {
     LinkedList returnList = new LinkedList("head");
-    returnList.insert("2");
-    returnList.insert("3");
+    returnList.append("2");
+    returnList.append("3");
     returnList.append("5");
     returnList.append("8");
     returnList.insertBefore("2", "9");
@@ -132,11 +133,60 @@ public class LinkedListTest {
     returnList.insertAfter("8", "9");
     assertEquals("the result should be {head}->{2}->{3}->{5}->{8}->{9}->NULL", "{head}->{2}->{3}->{5}->{8}->{9}->NULL", returnList.tostring());
   }
+  @Test
+  public void testNodeValue() {
+    LinkedList returnList = new LinkedList("head");
+    returnList.append("2");
+    returnList.append("3");
+    returnList.append("5");
+    returnList.append("8");
+returnList.nodesValue(0);
+    assertEquals("the result should be {8}", "8",returnList.nodesValue(0));
+  }
 
   @Test
   public void testKGreaterthan() {
     LinkedList returnList = new LinkedList("head");
     returnList.insert("2");
+   returnList.nodesValue(4);
+    assertEquals("the result should be {8}", null,returnList.nodesValue(3));
+  }
+  @Test
+  public void testNegativrVal() {
+    LinkedList returnList = new LinkedList("head");
+    assertEquals("the result should be {8}", "head",returnList.nodesValue(0));
+  }
+  @Test
+  public void testKequalLinkedList() {
+    LinkedList returnList = new LinkedList("head");
+    returnList.append("8");
+    assertEquals("the result should be {8}", "head",returnList.nodesValue(1));
+  }
+  @Test
+  public void zipLinkedLisWhenNull() {
+    LinkedList first = new LinkedList("2");
+    first.append("8");
+    LinkedList second = new LinkedList();
+    zipList(first,second);
+  assertEquals("the result should be {2}->{8}", "{2}->{8}->NULL",  zipList(first,second).tostring());
+  }
+  @Test
+  public void zipLinkedLisWhenOneIsBigger() {
+    LinkedList first = new LinkedList("2");
+    first.append("8");
+    LinkedList second = new LinkedList("1");
+    second.append("3");
+    second.append("5");
+    second.append("6");
+    zipList(first,second);
+    assertEquals("the result should be {2}->{1}->{8}->{3}->{5}->NULL", "{2}->{1}->{8}->{3}->{5}->NULL",  zipList(first,second));
+  }
+  @Test
+  public void zipLinkedLisWhenTwoNull() {
+    LinkedList first = new LinkedList();
+    LinkedList second = new LinkedList();
 
+    zipList(first,second);
+    assertEquals("the result should be NULL", "NULL",  zipList(first,second).tostring());
   }
 }

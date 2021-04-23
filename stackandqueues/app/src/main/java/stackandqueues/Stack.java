@@ -2,11 +2,15 @@ package stackandqueues;
 
 public class Stack <T>{
   Node<T> top;
+  Node<T> maxNum;
 
-
-public void push(T value){
+public void push(Object value){
 Node item=new Node(value,top);
   top=item;
+  if(Math.max((int) maxNum.getValue() , (int)value) !=(int) maxNum.getValue()){
+    Node maxitem=new Node(value,maxNum);
+    maxNum=maxitem;
+  }
 }
   public T pop(){
   try {
@@ -20,12 +24,12 @@ Node item=new Node(value,top);
   return top.value;
   }
 
-  public String peek() {
-  try {
-    return "Top value is : "+top.value;
-  }catch (Exception ex){
-   return "The stack is empty";
-  }
+  public T peek() {
+//  try {
+    return top.value;
+//  }catch (Exception ex){
+//   return "The stack is empty";
+//  }
   }
   public boolean isEmpty() {
     if (top == null) {
@@ -34,6 +38,20 @@ Node item=new Node(value,top);
       return false;
     }
   }
+  public T maxValue() {
+  return maxNum.value;
+  }
+
+
+
+
+
+
+
+
+
+
+
   @Override
 public String toString(){
 
