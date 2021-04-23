@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import java.net.PortUnreachableException;
 
+import static linkedList.LinkedList.zipList;
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
@@ -160,5 +161,32 @@ returnList.nodesValue(0);
     LinkedList returnList = new LinkedList("head");
     returnList.append("8");
     assertEquals("the result should be {8}", "head",returnList.nodesValue(1));
+  }
+  @Test
+  public void zipLinkedLisWhenNull() {
+    LinkedList first = new LinkedList("2");
+    first.append("8");
+    LinkedList second = new LinkedList();
+    zipList(first,second);
+  assertEquals("the result should be {2}->{8}", "{2}->{8}->NULL",  zipList(first,second).tostring());
+  }
+  @Test
+  public void zipLinkedLisWhenOneIsBigger() {
+    LinkedList first = new LinkedList("2");
+    first.append("8");
+    LinkedList second = new LinkedList("1");
+    second.append("3");
+    second.append("5");
+    second.append("6");
+    zipList(first,second);
+    assertEquals("the result should be {2}->{1}->{8}->{3}->{5}->NULL", "{2}->{1}->{8}->{3}->{5}->NULL",  zipList(first,second));
+  }
+  @Test
+  public void zipLinkedLisWhenTwoNull() {
+    LinkedList first = new LinkedList();
+    LinkedList second = new LinkedList();
+
+    zipList(first,second);
+    assertEquals("the result should be NULL", "NULL",  zipList(first,second).tostring());
   }
 }

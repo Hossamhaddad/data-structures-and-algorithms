@@ -19,16 +19,15 @@ public class LinkedList {
 
 
   public static void main(String[] args) {
-    LinkedList newList = new LinkedList("husam");
-    newList.append("2");
+    LinkedList newList = new LinkedList("hi");
     newList.append("3");
-    newList.append("5");
-    newList.nodesValue(0);
+    newList.append("4");
     LinkedList second = new LinkedList("hello");
-    second.insert("3");
-    second.insert("4");
-    System.out.println(zipList(newList, second));
-
+    second.append("3");
+    second.append("4");
+    second.append("5");
+    zipList(newList,second);
+    System.out.println(zipList(newList,second).tostring());
   }
 
   public void insert(String value) {
@@ -150,10 +149,17 @@ public class LinkedList {
     return null;
   }
 
-  public static LinkedList zipList(LinkedList a, LinkedList b) {
-    Node first = a.head;
-    Node second = b.head;
-    while (first.next != null && second.next != null) {
+  public static LinkedList zipList(LinkedList a,LinkedList b){
+    Node first=a.head;
+    Node second=b.head;
+    if(first==null){
+
+      return b;
+    }
+    if(second==null){
+      return a;
+    }
+    while (first.next!=null&&second.next!=null) {
       Node current = second.next;
 
       second.next = first.next;
@@ -161,22 +167,14 @@ public class LinkedList {
       first = second.next;
       second = current;
     }
-    if (first.next != null) {
-      while (first.next != null) {
-        first.next = first;
-        first = first.next;
-      }
+    if(first.next!=null){
+      first.next=first;
+    }else {
+      first.next=second;
     }
-    if (second.next != null) {
-      while (second.next != null) {
-        first.next = second;
-        second = second.next;
-      }
-      System.out.println(a.tostring());
-      return a;
+    System.out.println(a.tostring());
+    return  a;
 
-    }
-    return a;
   }
 }
 
