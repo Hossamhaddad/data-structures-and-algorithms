@@ -13,7 +13,4 @@ public class Node {
     value=data;
     next=null;
   }
-
-
-
 }

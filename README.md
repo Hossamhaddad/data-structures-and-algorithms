@@ -12,3 +12,4 @@
 | [Multi Bracket](/challenges/MultiBracket.md)            |
 | [ll-kth-from-end.](</Data-Structures/kthFromEnd(k).md>) |
 | [ll-zip](/Data-Structures/ll-zip.md)                    |
+| [Tree](/tree/readme.md)                                 |
