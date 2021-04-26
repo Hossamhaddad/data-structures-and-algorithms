@@ -1,5 +1,8 @@
 package tree;
 
+
+import stackandqueues.Queue;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,4 +54,20 @@ return inOrderList;
 
     return postOrderList;
   }
-}
+  public List BreadthFirst(Node root){
+    List <Integer> breadthFirst=new ArrayList<>();
+    Queue<Node> breadth=new stackandqueues.Queue<>();
+    breadth.enqueue(root);
+    while (!breadth.isEmpty()){
+      Node front=breadth.dequeue();
+      breadthFirst.add(front.value);
+      if(front.left!=null){
+        breadth.enqueue(front.left);
+      }
+      if(front.right!=null){
+        breadth.enqueue(front.right);
+      }
+    }
+  return breadthFirst;
+    }
+  }
