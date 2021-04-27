@@ -58,6 +58,15 @@ public class AppTest {
     test.enqueue("good");
     assertEquals("the Queue should be empty ","peek value is : hi",test.peek());
   }
+    @Test public void testQueueDeque(){
+    Queue  test=new Queue();
+    test.enqueue("hi");
+    test.enqueue("hello");
+    test.enqueue("good");
+    assertEquals("the value should be hi ","hi",test.dequeue());
+    assertEquals("the value should be hello ","hello",test.dequeue());
+    assertEquals("the value should be good ","good",test.dequeue());
+  }
 
 }
 
