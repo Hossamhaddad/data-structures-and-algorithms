@@ -6,23 +6,24 @@ public class Queue<T> {
 
 
   public void enqueue(T value){
- if(front==null){
- front=new Node<T>(value,back);
- back=front;
- } else {
-   back=new Node<T>(value,back);
- }
-  }
-
-  public void dequeue() {
     if (front == null) {
-      back = null;
-      System.out.println("Queue is empty");
-    } else {
-      System.out.println("the removed value is "+front.value);
-      front =front.next;
+      front = new Node<T>(value, null);
+      back = front;
+    }else{
+      Node<T> newNode=new Node<T>(value, null);
+      back.next=newNode;
+      back=newNode;
     }
   }
+
+  public T dequeue() {
+    if (front == null)  {
+      throw new NullPointerException("Queue is Empty");
+    }
+      T value=front.value;
+      front=front.next;
+      return value;
+    }
 
   public String peek () {
       try {
