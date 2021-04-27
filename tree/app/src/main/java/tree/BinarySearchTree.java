@@ -1,7 +1,5 @@
 package tree;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class BinarySearchTree {
   Node root;
@@ -16,38 +14,55 @@ public class BinarySearchTree {
   }
 
   public void add(Integer value) {
-Node newNode=new Node(value);
+    Node newNode = new Node(value);
     Node current;
     Node parent;
     if (root == null) {
       root = newNode;
-    }
-    else {
-  current=root;
-  parent=null;
- while (true){
-   parent=current;
-   if(value< parent.value){
-     current=current.left;
-     if(current==null){
-       parent.left=newNode;
-       return;
-     }
-   }else {
-     current=current.right;
-     if(current==null) {
-       parent.right = newNode;
-       return;
-     }
-   }
- }
-    }
-
-
+    } else {
+      current = root;
+      parent = null;
+      while (true) {
+        parent = current;
+        if (value < parent.value) {
+          current = current.left;
+          if (current == null) {
+            parent.left = newNode;
+            return;
+          }
+        } else {
+          current = current.right;
+          if (current == null) {
+            parent.right = newNode;
+            return;
+          }
+        }
+      }
     }
 
+  }
 
+  public boolean contains(Integer value) {
+    Node current = root;
+
+    while (current != null) {
+
+      if (current.value == value) {
+        return true;
+      } else if (current.value > value) {
+        current = current.left;
+      } else if (current.value < value) {
+        current = current.right;
+      }
     }
+    return false;
+  }
+}
+
+
+
+
+
 
 
 

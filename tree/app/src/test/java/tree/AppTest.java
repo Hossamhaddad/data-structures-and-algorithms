@@ -4,6 +4,10 @@
 package tree;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
@@ -11,4 +15,60 @@ public class AppTest {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
     }
+  @Test public void EmptyTree() {
+    BinaryTree test=new BinaryTree();
+ assertEquals("The result should be null",null,test.root);
+  }
+  @Test public void singleNodeTree() {
+     Node node=new Node(5,null,null);
+    BinaryTree test=new BinaryTree();
+    List  testArray=new ArrayList();
+    testArray.add(5);
+    assertEquals("The result should be null",testArray,test.postOrder(node));
+  }
+  @Test public void leftAndRightChild() {
+    Node left=new Node(7,null,null);
+    Node right=new Node(9,null,null);
+    Node node=new Node(5,left,right);
+    BinaryTree test=new BinaryTree();
+    List  testArray=new ArrayList();
+    testArray.add(7);
+    testArray.add(9);
+    testArray.add(5);
+    assertEquals("The result should be null",testArray,test.postOrder(node));
+  }
+  @Test public void testPostOrder() {
+    Node left=new Node(7,null,null);
+    Node right=new Node(9,null,null);
+    Node node=new Node(5,left,right);
+    BinaryTree test=new BinaryTree();
+    List  testArray=new ArrayList();
+    testArray.add(7);
+    testArray.add(9);
+    testArray.add(5);
+    assertEquals("The result should be null",testArray,test.postOrder(node));
+  }
+  @Test public void testInOrder() {
+    Node left=new Node(7,null,null);
+    Node right=new Node(9,null,null);
+    Node node=new Node(5,left,right);
+    BinaryTree test=new BinaryTree();
+    List  testArray=new ArrayList();
+    testArray.add(7);
+    testArray.add(5);
+    testArray.add(9);
+    assertEquals("The result should be null",testArray,test.inOrder(node));
+  }
+  @Test public void testPreOrder() {
+    Node left=new Node(7,null,null);
+    Node right=new Node(9,null,null);
+    Node node=new Node(5,left,right);
+    BinaryTree test=new BinaryTree();
+    List  testArray=new ArrayList();
+    testArray.add(5);
+    testArray.add(7);
+    testArray.add(9);
+    assertEquals("The result should be null",testArray,test.preOrder(node));
+  }
+
 }
