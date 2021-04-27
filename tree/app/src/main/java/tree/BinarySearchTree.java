@@ -24,7 +24,7 @@ public class BinarySearchTree {
       parent = null;
       while (true) {
         parent = current;
-        if (value < parent.value) {
+        if (value <(Integer) parent.value) {
           current = current.left;
           if (current == null) {
             parent.left = newNode;
@@ -49,9 +49,9 @@ public class BinarySearchTree {
 
       if (current.value == value) {
         return true;
-      } else if (current.value > value) {
+      } else if ((Integer)current.value > value) {
         current = current.left;
-      } else if (current.value < value) {
+      } else if ((Integer)current.value < value) {
         current = current.right;
       }
     }

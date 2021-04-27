@@ -1,13 +1,12 @@
 package tree;
 
-
 import stackandqueues.Queue;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTree {
-  Node root;
+public class BinaryTree <T> {
+  Node <T> root;
   List <Integer> preOrderList=new ArrayList<>();
   List <Integer> inOrderList=new ArrayList<>();
   List <Integer> postOrderList=new ArrayList<>();
@@ -19,7 +18,7 @@ public class BinaryTree {
   }
   public List preOrder(Node node) {
 
-preOrderList.add(node.value);
+preOrderList.add((Integer) node.value);
  if(node.left!=null){
    preOrder(node.left);
  }
@@ -34,7 +33,7 @@ public List inOrder(Node node){
     if(node.left!=null){
       inOrder(node.left);
     }
-    inOrderList.add(node.value);
+    inOrderList.add((Integer) node.value);
     if(node.right!=null){
       inOrder(node.right);
     }
@@ -50,8 +49,7 @@ return inOrderList;
     if(node.right!=null){
       postOrder(node.right);
     }
-    postOrderList.add(node.value);
-
+    postOrderList.add((Integer) node.value);
     return postOrderList;
   }
   public List BreadthFirst(Node root){
@@ -60,7 +58,7 @@ return inOrderList;
     breadth.enqueue(root);
     while (!breadth.isEmpty()){
       Node front=breadth.dequeue();
-      breadthFirst.add(front.value);
+      breadthFirst.add((Integer) front.value);
       if(front.left!=null){
         breadth.enqueue(front.left);
       }

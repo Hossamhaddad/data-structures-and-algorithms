@@ -1,13 +1,13 @@
 package tree;
 
-public class Node {
-  public Integer value;
+public class Node <T>{
+  public T value;
   public Node left ;
   public Node right ;
 
 
 
-  public Node(Integer value) {
+  public Node(T value) {
     this.value = value;
   }
 
@@ -17,7 +17,7 @@ public class Node {
 
   }
 
-  public Node(Integer value, Node left, Node right) {
+  public Node(T value, Node left, Node right) {
     this.value = value;
     this.left = left;
     this.right = right;
