@@ -59,17 +59,7 @@ public class AppTest {
     testArray.add(9);
     assertEquals("The result should be null",testArray,test.inOrder(node));
   }
-  @Test public void testPreOrder() {
-    Node left=new Node(7,null,null);
-    Node right=new Node(9,null,null);
-    Node node=new Node(5,left,right);
-    BinaryTree test=new BinaryTree();
-    List  testArray=new ArrayList();
-    testArray.add(5);
-    testArray.add(7);
-    testArray.add(9);
-    assertEquals("The result should be null",testArray,test.preOrder(node));
-  }
+
   @Test public void testPreOrder() {
     Node left=new Node(7,null,null);
     Node right=new Node(9,null,null);
@@ -98,7 +88,40 @@ public class AppTest {
 
     assertEquals("The result should be null",testArray,test.BreadthFirst(root));
   }
+@Test public void testFizzBuzz(){
+  ArrayList<FizzNode> children1 = new ArrayList<>();
+  ArrayList<FizzNode> children2 = new ArrayList<>();
+  ArrayList<FizzNode> children3 = new ArrayList<>();
+  FizzNode root = new FizzNode(1);
+  FizzNode node1 = new FizzNode(2);
+  FizzNode node2 = new FizzNode(3);
+  FizzNode node3 = new FizzNode(4);
+  FizzNode node4 = new FizzNode(5);
+  FizzNode node5 = new FizzNode(50);
+  FizzNode node6 = new FizzNode(60);
+  FizzNode node7 = new FizzNode(70);
+  FizzNode node8 = new FizzNode(90);
+  FizzNode node9 = new FizzNode(100);
+  FizzNode node10 = new FizzNode(150);
 
+  children1.add(node1);
+  children1.add(node2);
+  children1.add(node3);
+  children1.add(node4);
+  children1.add(node5);
+  root.children = children1;
+  children2.add(node6);
+  children2.add(node7);
+  children2.add(node8);
+  node1.children = children2;
+  children3.add(node9);
+  children3.add(node10);
+  node3.children = children3;
+  fizzbuzz f = new fizzbuzz();
+  FizzNode newtree=f.fizzBuzzTree(root);
+  newtree.printNodeTree(newtree,0);
+
+}
 
 
 

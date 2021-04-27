@@ -13,3 +13,5 @@
 | [ll-kth-from-end.](</Data-Structures/kthFromEnd(k).md>) |
 | [ll-zip](/Data-Structures/ll-zip.md)                    |
 | [Tree](/tree/readme.md)                                 |
+| [breadth-first](/tree/breadth-first.md)                 |
+| [fizzbuzz](/tree/fizzbuzz.md)                           |
