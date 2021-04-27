@@ -13,15 +13,9 @@ public class App {
       Node leftt = new Node(10, null, null);
       Node lefet = new Node(6, leftt, null);
       Node rightt = new Node(8, null, null);
-BinaryTree test=new BinaryTree(rightt);
       Node right = new Node(15, null, rightt);
       Node root = new Node(5, lefet, right);
-    BinarySearchTree test2=new BinarySearchTree();
-    test2.add(5);
-      test2.add(10);
-      test2.add(20);
-      test2.add(15);
-      System.out.println(test.root.value);
+
     }
 
     }

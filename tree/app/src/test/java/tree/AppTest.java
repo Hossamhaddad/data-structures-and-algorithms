@@ -70,5 +70,41 @@ public class AppTest {
     testArray.add(9);
     assertEquals("The result should be null",testArray,test.preOrder(node));
   }
+  @Test public void testPreOrder() {
+    Node left=new Node(7,null,null);
+    Node right=new Node(9,null,null);
+    Node node=new Node(5,left,right);
+    BinaryTree test=new BinaryTree();
+    List  testArray=new ArrayList();
+    testArray.add(5);
+    testArray.add(7);
+    testArray.add(9);
+    assertEquals("The result should be null",testArray,test.preOrder(node));
+  }
+
+  @Test public void testBreadthFirst() {
+    Node leftt = new Node(10, null, null);
+    Node lefet = new Node(6, leftt, null);
+    Node rightt = new Node(8, null, null);
+    Node right = new Node(15, null, rightt);
+    Node root = new Node(5, lefet, right);
+    BinaryTree test=new BinaryTree();
+    List  testArray=new ArrayList();
+    testArray.add(5);
+    testArray.add(6);
+    testArray.add(15);
+    testArray.add(15);
+    testArray.add(8);
+
+    assertEquals("The result should be null",testArray,test.BreadthFirst(root));
+  }
+
+
+
+
+
+
+
+
 
 }
