@@ -88,6 +88,17 @@ public class AppTest {
 
     assertEquals("The result should be null",testArray,test.BreadthFirst(root));
   }
+  @Test public void testMaxValue() {
+    Node leftt = new Node(10, null, null);
+    Node lefet = new Node(6, leftt, null);
+    Node rightt = new Node(8, null, null);
+    Node right = new Node(15, null, rightt);
+    Node root = new Node(5, lefet, right);
+    BinaryTree test=new BinaryTree(root);
+    System.out.println(test.maxValue());
+    assertEquals("The result should be 15",15,test.maxValue());
+  }
+
 @Test public void testFizzBuzz(){
   ArrayList<FizzNode> children1 = new ArrayList<>();
   ArrayList<FizzNode> children2 = new ArrayList<>();
@@ -122,12 +133,4 @@ public class AppTest {
   newtree.printNodeTree(newtree,0);
 
 }
-
-
-
-
-
-
-
-
 }

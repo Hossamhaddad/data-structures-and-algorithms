@@ -68,4 +68,26 @@ return inOrderList;
     }
   return breadthFirst;
     }
-  }
+
+
+    public int maxValue(){
+      if(root == null){
+        return 0;
+      }
+      Queue<Node> queue = new Queue<>();
+      queue.enqueue(root);
+      int max = -1;
+      while(!queue.isEmpty()) {
+        Node temp = queue.dequeue();
+        if((Integer)temp.value > max)
+          max = (Integer) temp.value;
+        if(temp.left != null)
+          queue.enqueue(temp.left);
+        if(temp.right != null)
+          queue.enqueue(temp.right);
+      }
+
+      return max;
+    }
+    }
+

@@ -15,4 +15,5 @@
 | [Tree](/tree/readme.md)                                 |
 | [breadth-first](/tree/breadth-first.md)                 |
 | [fizzbuzz](/tree/fizzbuzz.md)                           |
+| [maxValue](/tree/maxvalue.md)                           |
 
