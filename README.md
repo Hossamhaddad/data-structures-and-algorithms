@@ -16,4 +16,5 @@
 | [breadth-first](/tree/breadth-first.md)                 |
 | [fizzbuzz](/tree/fizzbuzz.md)                           |
 | [maxValue](/tree/maxvalue.md)                           |
+| [Insertion Sort](/insertion/readme.md)                  |
 
