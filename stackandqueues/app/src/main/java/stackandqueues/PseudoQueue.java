@@ -17,11 +17,11 @@ public class PseudoQueue <T>{
   public T dequeue() throws NullPointerException  {
 
     while (a!=null) {
-      b.push(a.pop());
+      b.push((T)a.pop());
     }
-    T result = b.pop();
+    T result = (T)b.pop();
     while(b!=null) {
-      a.push(b.pop());
+      a.push((T)b.pop());
     }
     return result;
   }
