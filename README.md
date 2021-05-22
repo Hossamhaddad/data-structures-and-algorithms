@@ -18,3 +18,4 @@
 | [maxValue](/tree/maxvalue.md)                           |
 | [Insertion Sort](/insertion/readme.md)                  |
 | [Merge Sort](/mergesort/readme.md)                      |
+| [Quick sort](/quicksort/readme.md)                      |
