@@ -12,13 +12,13 @@ public class HashTable {
 
    System.out.println("Ho");
 HashTable test=new HashTable();
-HashNode node=new HashNode("husam","hadd",null);
-   HashNode node1=new HashNode("hus","husamm",null);
+HashNode node=new HashNode("sam","hadd",null);
+   HashNode node1=new HashNode("mas","husamm",null);
 test.add(node);
    test.add(node1);
-   test.get("hus");
+   test.get("mas");
 
-   System.out.println( test.contains("husss"));
+   System.out.println( test.get("sam"));
   }
   HashNode[] hashTable=new HashNode[100];
 
