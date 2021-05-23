@@ -7,5 +7,28 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest {
+  @Test public void testAddAndGet() {
+    HashTable test=new HashTable();
+    HashNode node=new HashNode("husam","haddad",null);
+    HashNode node1=new HashNode("hus","husam",null);
+    test.add(node);
+    assertEquals("the value  should be haddad ","haddad",test.get("husam"));
+  }
+  @Test public void testNull() {
+    HashTable test=new HashTable();
+    HashNode node=new HashNode("husam","haddad",null);
+    test.add(node);
+    assertEquals("the value  should be haddad ",null,test.get("sam"));
+  }
+  @Test public void testCollision() {
+    HashTable test=new HashTable();
+    HashNode node=new HashNode("mas","haddad",null);
+    HashNode node1=new HashNode("sam","hadad",null);
+    test.add(node);
+    test.add(node1);
+    assertEquals("the value  should be haddad ","hadad",test.get("sam"));
+    assertEquals("the value  should be haddad ","haddad",test.get("mas"));
+  }
+
 
 }
