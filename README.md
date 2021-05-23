@@ -19,3 +19,4 @@
 | [Insertion Sort](/insertion/readme.md)                  |
 | [Merge Sort](/mergesort/readme.md)                      |
 | [Quick sort](/quicksort/readme.md)                      |
+| [Repeated Word](/RepeatedWord/readme.md)                |
