@@ -10,6 +10,7 @@ public class BinaryTree <T> {
   List <Integer> preOrderList=new ArrayList<>();
   List <Integer> inOrderList=new ArrayList<>();
   List <Integer> postOrderList=new ArrayList<>();
+  Integer sum=0;
   public BinaryTree(Node root) {
     this.root = root;
   }
@@ -89,5 +90,25 @@ return inOrderList;
 
       return max;
     }
+
+  public Integer suM(Node node) {
+    if((Integer) node.value%2!=0){
+sum+=(Integer) node.value;
+
+    }
+    if(node.left!=null){
+      if((Integer) node.left.value%2!=0){
+        sum+=(Integer) node.left.value;
+      }
+      preOrder(node.left);
+    }
+    if(node.right!=null){
+      if((Integer) node.right.value%2!=0){
+        sum+=(Integer) node.right.value;
+      }
+      preOrder(node.right);
+    }
+    return sum;
+  }
     }
 

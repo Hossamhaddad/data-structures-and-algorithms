@@ -16,7 +16,7 @@ public class App {
       Node right = new Node(15, null, rightt);
       Node root = new Node(5, lefet, right);
  BinaryTree test=new BinaryTree(root);
-      System.out.println(test.maxValue());
+      System.out.println(test.suM(root));
 
     }
 
