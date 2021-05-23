@@ -84,7 +84,9 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  arr.sort();
+  arr.sort((a,b)=>{
+ a.localeCompare(b);
+  });
   return arr;
 };
 
