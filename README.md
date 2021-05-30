@@ -21,4 +21,5 @@
 | [Quick sort](/quicksort/readme.md)                      |
 | [HashTable](/hashtable/readme.md)                       |
 | [Repeated Word](/RepeatedWord/readme.md)                |
+| [Graphs](/Graph/readme.md)                |
 
