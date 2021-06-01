@@ -1,7 +1,6 @@
 package Graph;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Graph {
   Set <Node> nodes;
@@ -46,4 +45,31 @@ public class Graph {
   public int size(){
     return nodes.size();
   }
+  public List<Node> breadthTraversal(Node node){
+    if (node == null){
+      throw new NullPointerException("input can not be null.");
+    }
+
+    List<Node> order = new ArrayList<>();
+    Set<Node> visited = new HashSet<>();
+
+    Queue<Node> queue = new LinkedList<>();
+
+    visited.add(node);
+    queue.add(node);
+
+    while(queue.size() != 0){
+      Node front = queue.poll();
+      order.add(front);
+
+      for(Edge neighbor :(Set<Edge>) front.neighbors){
+        if (visited.add(neighbor.node)){
+          queue.add(neighbor.node);
+          visited.add(neighbor.node);
+        }
+      }
+    }
+    return order;
+  }
+
 }

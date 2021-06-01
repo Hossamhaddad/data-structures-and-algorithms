@@ -13,47 +13,51 @@ public class LinkedList {
 
   }
 
-  public LinkedList(String item) {
+  public LinkedList(int item) {
     head = new Node(item);
   }
 
 
   public static void main(String[] args) {
-    LinkedList newList = new LinkedList("hi");
-    newList.append("3");
-    newList.append("4");
-    LinkedList second = new LinkedList("hello");
-    second.append("3");
-    second.append("4");
-    second.append("5");
-    zipList(newList,second);
-    System.out.println(zipList(newList,second).tostring());
+//    LinkedList newList = new LinkedList();
+//    newList.append("3");
+//    newList.append("4");
+    LinkedList second = new LinkedList(2);
+    second.append(3);
+    second.append(4);
+    second.append(3);
+    second.append(5);
+    second.deleteSpecific(second,2);
+
+
+
+
   }
 
-  public void insert(String value) {
+  public void insert(int value) {
 
     Node newHead = new Node(value);
     newHead.next = head;
     head = newHead;
   }
 
-  public boolean includes(String search) {
-    Node current = head;
-    try {
-
-
-      while (current != null) {
-        if (current.value == search) {
-          return true;
-        } else {
-          current = current.next;
-        }
-      }
-    } catch (Exception ex) {
-      System.out.println(ex);
-    }
-    return false;
-  }
+//  public boolean includes(String search) {
+//    Node current = head;
+//    try {
+//
+//
+//      while (current != null) {
+//        if (current.value == search) {
+//          return true;
+//        } else {
+//          current = current.next;
+//        }
+//      }
+//    } catch (Exception ex) {
+//      System.out.println(ex);
+//    }
+//    return false;
+//  }
 
   public String tostring() {
     String allValues = "";
@@ -67,7 +71,7 @@ public class LinkedList {
     return allValues;
   }
 
-  public void append(String value) {
+  public void append(int value) {
     Node newHead = new Node(value);
     Node current = head;
     while (current.next != null) {
@@ -76,105 +80,121 @@ public class LinkedList {
     current.next = newHead;
   }
 
-  public void insertBefore(String value, String newValue) {
-    Node newVal = new Node(newValue);
-    Node current = head;
-    Node before = null;
-    try {
-      while (current.next != null) {
-        if (current.value == value) {
-          before.next = newVal;
-          newVal.next = current;
-          return;
-        } else {
-          before = current;
-          current = current.next;
-        }
+//  public void insertBefore(String value, String newValue) {
+//    Node newVal = new Node(newValue);
+//    Node current = head;
+//    Node before = null;
+//    try {
+//      while (current.next != null) {
+//        if (current.value == value) {
+//          before.next = newVal;
+//          newVal.next = current;
+//          return;
+//        } else {
+//          before = current;
+//          current = current.next;
+//        }
+//      }
+//      throw (new Exception());
+//    } catch (Exception ex) {
+//      System.out.println("The value you try to insert before doesn't exist");
+//    }
+//  }
+//
+//  public void insertAfter(String value, String newValue) {
+//    Node newVal = new Node(newValue);
+//    Node current = head;
+//    Node after = current.next;
+//    try {
+//      while (current != null) {
+//        if (current.value == value) {
+//          current.next = newVal;
+//          newVal.next = after;
+//          return;
+//        } else {
+//          after = after.next;
+//          current = current.next;
+//        }
+//      }
+//      throw (new Exception());
+//    } catch (Exception ex) {
+//      System.out.println("the value you want to insert after doesn't exist ");
+//    }
+//  }
+//
+//  public String nodesValue(int k) {
+//    int listLength = 0;
+//    Node current = head;
+//    while (current != null) {
+//      current = current.next;
+//      listLength++;
+//    }
+//
+//    if (k < 0) {
+//      System.out.println("null");
+//      return null;
+//    }
+//
+//    try {
+//      if (k < listLength) {
+//        current = head;
+//        for (int i = 1; i < listLength - k; i++) {
+//          current = current.next;
+//        }
+//        System.out.println(current.value);
+//        return current.value;
+//      } else {
+//        throw new Exception();
+//      }
+//    } catch (Exception ex) {
+//
+//      System.out.println("this value exceeded the linkedlist length ");
+//    }
+//    return null;
+//  }
+//
+//  public static LinkedList zipList(LinkedList a,LinkedList b){
+//    Node first=a.head;
+//    Node second=b.head;
+//    if(first==null){
+//
+//      return b;
+//    }
+//    if(second==null){
+//      return a;
+//    }
+//    while (first.next!=null&&second.next!=null) {
+//      Node current = second.next;
+//
+//      second.next = first.next;
+//      first.next = second;
+//      first = second.next;
+//      second = current;
+//    }
+//    if(first.next!=null){
+//      first.next=first;
+//    }else {
+//      first.next=second;
+//    }
+//    System.out.println(a.tostring());
+//    return  a;
+//
+//  }
+  public LinkedList deleteSpecific(LinkedList a, int value){
+if(a.head.value==value){
+ a.head=a.head.next;
+}
+Node first=a.head;
+    a.head=first;
+    while(first.next!=null){
+      if(first.next.value!=value){
+        first=first.next;
+      }else {
+        first.next=first.next.next;
       }
-      throw (new Exception());
-    } catch (Exception ex) {
-      System.out.println("The value you try to insert before doesn't exist");
-    }
-  }
-
-  public void insertAfter(String value, String newValue) {
-    Node newVal = new Node(newValue);
-    Node current = head;
-    Node after = current.next;
-    try {
-      while (current != null) {
-        if (current.value == value) {
-          current.next = newVal;
-          newVal.next = after;
-          return;
-        } else {
-          after = after.next;
-          current = current.next;
-        }
-      }
-      throw (new Exception());
-    } catch (Exception ex) {
-      System.out.println("the value you want to insert after doesn't exist ");
-    }
-  }
-
-  public String nodesValue(int k) {
-    int listLength = 0;
-    Node current = head;
-    while (current != null) {
-      current = current.next;
-      listLength++;
-    }
-
-    if (k < 0) {
-      System.out.println("null");
-      return null;
-    }
-
-    try {
-      if (k < listLength) {
-        current = head;
-        for (int i = 1; i < listLength - k; i++) {
-          current = current.next;
-        }
-        System.out.println(current.value);
-        return current.value;
-      } else {
-        throw new Exception();
-      }
-    } catch (Exception ex) {
-
-      System.out.println("this value exceeded the linkedlist length ");
-    }
-    return null;
-  }
-
-  public static LinkedList zipList(LinkedList a,LinkedList b){
-    Node first=a.head;
-    Node second=b.head;
-    if(first==null){
-
-      return b;
-    }
-    if(second==null){
-      return a;
-    }
-    while (first.next!=null&&second.next!=null) {
-      Node current = second.next;
-
-      second.next = first.next;
-      first.next = second;
-      first = second.next;
-      second = current;
-    }
-    if(first.next!=null){
-      first.next=first;
-    }else {
-      first.next=second;
     }
     System.out.println(a.tostring());
-    return  a;
-
+return a;
   }
 }
 
