@@ -2,14 +2,14 @@ package linkedList;
 
 
 public class Node {
-    String value;
+    int value;
     Node next;
 
   public Node(){
 
   }
 
-  Node(String data){
+  Node(int data){
     value=data;
     next=null;
   }

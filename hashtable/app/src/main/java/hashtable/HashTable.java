@@ -9,22 +9,19 @@ import java.util.List;
 public class HashTable {
 
  public static void main(String[] args){
-
-   System.out.println("Ho");
 HashTable test=new HashTable();
 HashNode node=new HashNode("sam","hadd",null);
    HashNode node1=new HashNode("mas","husamm",null);
 test.add(node);
    test.add(node1);
    test.get("mas");
-
    System.out.println( test.get("sam"));
   }
   HashNode[] hashTable=new HashNode[100];
 
 public void add(HashNode node){
 
-Integer index=hash(node.key);
+Integer index=hash((String) node.key);
 if(hashTable[index]!=null){
   while ((hashTable[index].next!=null)){
     hashTable[index]=hashTable[index].next;
@@ -44,13 +41,13 @@ public Integer  hash(String key){
   System.out.println(hash);
    return hash;
 }
-public String get(String key){
+public HashNode get(String key){
   Integer index=hash(key);
   if(hashTable[index]!=null) {
     HashNode current = hashTable[index];
     while (current!=null){
      if(current.key==key){
-       return current.value;
+       return current;
      }else {
        current=current.next;
      }
@@ -70,9 +67,7 @@ if(hashTable[index]!=null){
     }
 
   }
-
 }
-
   return false;
 }
 }
