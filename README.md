@@ -20,3 +20,4 @@
 | [Merge Sort](/mergesort/readme.md)                      |
 | [Quick sort](/quicksort/readme.md)                      |
 | [HashTable](/hashtable/readme.md)                       |
+| [LeftJoin](/leftjoin/readme.md)                         |
