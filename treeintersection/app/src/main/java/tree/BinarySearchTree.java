@@ -1,4 +1,4 @@
-package treeintersection;
+package tree;
 
 
 public class BinarySearchTree {

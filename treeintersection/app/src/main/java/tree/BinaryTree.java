@@ -1,13 +1,21 @@
-package treeintersection;
+package tree;
 
-import sun.misc.Queue;
-
+import stackandqueues.Queue;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BinaryTree <T> {
-  Node<T> root;
+  Node <T> root;
+
+  public Node<T> getRoot() {
+    return root;
+  }
+
+  public void setRoot(Node<T> root) {
+    this.root = root;
+  }
+
   List <Integer> preOrderList=new ArrayList<>();
   List <Integer> inOrderList=new ArrayList<>();
   List <Integer> postOrderList=new ArrayList<>();
@@ -54,43 +62,43 @@ return inOrderList;
     postOrderList.add((Integer) node.value);
     return postOrderList;
   }
-//  public List BreadthFirst(Node root){
-//    List <Integer> breadthFirst=new ArrayList<>();
-//    Queue<Node> breadth=new Queue<>();
-//    breadth.enqueue(root);
-//    while (!breadth.isEmpty()){
-//      Node front=breadth.dequeue();
-//      breadthFirst.add((Integer) front.value);
-//      if(front.left!=null){
-//        breadth.enqueue(front.left);
-//      }
-//      if(front.right!=null){
-//        breadth.enqueue(front.right);
-//      }
-//    }
-//  return breadthFirst;
-//    }
+  public List BreadthFirst(Node root){
+    List <Integer> breadthFirst=new ArrayList<>();
+    Queue<Node> breadth=new stackandqueues.Queue<>();
+    breadth.enqueue(root);
+    while (!breadth.isEmpty()){
+      Node front=breadth.dequeue();
+      breadthFirst.add((Integer) front.value);
+      if(front.left!=null){
+        breadth.enqueue(front.left);
+      }
+      if(front.right!=null){
+        breadth.enqueue(front.right);
+      }
+    }
+  return breadthFirst;
+    }
 
 
-//    public int maxValue(){
-//      if(root == null){
-//        return 0;
-//      }
-//      Queue<Node> queue = new Queue<>();
-//      queue.enqueue(root);
-//      int max = -1;
-//      while(!queue.isEmpty()) {
-//        Node temp = queue.dequeue();
-//        if((Integer)temp.value > max)
-//          max = (Integer) temp.value;
-//        if(temp.left != null)
-//          queue.enqueue(temp.left);
-//        if(temp.right != null)
-//          queue.enqueue(temp.right);
-//      }
-//
-//      return max;
-//    }
+    public int maxValue(){
+      if(root == null){
+        return 0;
+      }
+      Queue<Node> queue = new Queue<>();
+      queue.enqueue(root);
+      int max = -1;
+      while(!queue.isEmpty()) {
+        Node temp = queue.dequeue();
+        if((Integer)temp.value > max)
+          max = (Integer) temp.value;
+        if(temp.left != null)
+          queue.enqueue(temp.left);
+        if(temp.right != null)
+          queue.enqueue(temp.right);
+      }
+
+      return max;
+    }
 
   public Integer suM(Node node) {
     if((Integer) node.value%2!=0){

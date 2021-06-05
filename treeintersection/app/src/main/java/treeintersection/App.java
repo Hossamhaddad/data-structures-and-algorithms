@@ -4,25 +4,41 @@
 package treeintersection;
 
 
+import tree.BinarySearchTree;
+import tree.BinaryTree;
+import tree.Node;
+
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class App {
 
     public static void main(String[] args){
-      Node root=new Node<>("5",null,null);
-      Node root3=new Node<>("5",root,null);
+      Node firstRoot=new Node(7,null,null);
+      Node root=new Node<>(5,firstRoot,null);
+
       BinaryTree first=new BinaryTree(root);
-      Node root1=new Node("6",root,null);
+      Node secondRoot=new Node(7,null,null);
+      Node root1=new Node(5,null,secondRoot);
       BinaryTree second=new BinaryTree(root1);
    TreeIntersection(first,second);
-    }
-    public static void TreeIntersection(BinaryTree first, BinaryTree second){
+      System.out.println(TreeIntersection(first,second));
 
-        List  firstTree=first.inOrder(first.root);
-        firstTree=first.inOrderList;
-      if(second!=null) {
+    }
+    public static HashSet TreeIntersection( BinaryTree first,BinaryTree second ){
+      if(first.getRoot()==null||second.getRoot()==null){
+        return null;
+      }
+      List firstTree=first.inOrder(first.getRoot());
+      List secondTree=first.inOrder(second.getRoot());
+    HashSet intersectionList=new HashSet();
+      for( Object value : firstTree ){
+     if(secondTree.contains(value)){
+       intersectionList.add(value);
+     }
 
       }
+return intersectionList;
     }
 }

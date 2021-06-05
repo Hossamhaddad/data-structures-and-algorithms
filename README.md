@@ -20,6 +20,7 @@
 | [Merge Sort](/mergesort/readme.md)                      |
 | [Quick sort](/quicksort/readme.md)                      |
 | [HashTable](/hashtable/readme.md)                       |
+| [LeftJoin](/leftjoin/readme.md)                         |
+| [Tree Intersection](/treeintersection/readme.md)                         |
 | [Repeated Word](/RepeatedWord/readme.md)                |
 | [Graphs](/Graph/readme.md)                |
-
