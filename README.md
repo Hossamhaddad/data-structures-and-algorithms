@@ -1,4 +1,4 @@
-# Data Structures and Algorithms
+# Data Structures and AlgorithmsCancel changes
 
 ## 401 Data Structures, Code Challenges
 
@@ -22,3 +22,5 @@
 | [HashTable](/hashtable/readme.md)                       |
 | [LeftJoin](/leftjoin/readme.md)                         |
 | [Tree Intersection](/treeintersection/readme.md)                         |
+| [Repeated Word](/RepeatedWord/readme.md)                |
+| [Graphs](/Graph/readme.md)                |

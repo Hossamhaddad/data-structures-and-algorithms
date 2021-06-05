@@ -12,4 +12,4 @@
 
 ## Solution
 
-![Array Shift](../assets/arrayshift.jpg)
+![Binary Search](../assets/BinarySearch.jpg)
