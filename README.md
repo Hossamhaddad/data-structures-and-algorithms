@@ -21,3 +21,4 @@
 | [Quick sort](/quicksort/readme.md)                      |
 | [HashTable](/hashtable/readme.md)                       |
 | [LeftJoin](/leftjoin/readme.md)                         |
+| [Tree Intersection](/treeintersection/readme.md)                         |
