@@ -2,13 +2,13 @@ package Graph;
 
 import java.util.*;
 
-public class Graph {
+public class Graph <T>{
   Set <Node> nodes;
   Set <Edge> edges;
   public Graph(){
     nodes = new HashSet<>();
   }
-  public Node addNode(int input){
+  public Node addNode(T input){
     Node newNode = new Node(input);
     nodes.add(newNode);
     return newNode;
@@ -71,5 +71,36 @@ public class Graph {
     }
     return order;
   }
+  public String getEdge(Graph g, String[] cities){
+    if (cities.length > nodes.size()||cities.length < 2){
+      throw new IllegalArgumentException("wrong input");
+    }
 
+    int total = 0;
+    for (int i = 0;i < cities.length-1; i++) {
+      int j = i + 1;
+      Node next = g.getPresentNode(cities[j]);
+      Node current = g.getPresentNode(cities[i]);
+
+      if (current.neighbors.contains(next)){
+        total = total + current.getCost(next);
+      }else{
+        break;
+      }
+    }
+
+    if (total == 0){
+      return "false " + 0;
+    }else{
+      return "true " + total;
+    }
+  }
+  public Node getPresentNode(T value){
+    for(Node node : nodes){
+      if (node.value == value){
+        return node;
+      }
+    }
+    return null;
+  }
 }
