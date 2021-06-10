@@ -22,3 +22,4 @@
 | [HashTable](/hashtable/readme.md)                       |
 | [Graph Breadth First](/Graph/breadthFirst.md)           |
 | [Graph get Edge](/Graph/getEdge.md)                     |
+| [Graph depth First](/Graph/DepthFirst.md)               |

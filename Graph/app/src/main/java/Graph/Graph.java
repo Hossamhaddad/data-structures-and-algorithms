@@ -103,4 +103,30 @@ public class Graph <T>{
     }
     return null;
   }
+  public List<Node> DFS(Node node){
+    if (node == null){
+      throw new NullPointerException("input can not be null.");
+    }
+
+    List<Node> order = new ArrayList<>();
+    Set<Node> visited = new HashSet<>();
+
+    Stack<Node> stack = new Stack<>();
+
+    visited.add(node);
+    stack.push(node);
+
+    while(stack.size() != 0){
+      Node top = stack.pop();
+      order.add(top);
+
+      for (Edge neighbor : (HashSet<Edge>)top.neighbors){
+        if (visited.add(neighbor.node)){
+          stack.push(neighbor.node);
+          visited.add(neighbor.node);
+        }
+      }
+    }
+    return order;
+  }
 }
